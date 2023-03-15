@@ -2,11 +2,11 @@
 
 namespace SortManager.App.View;
 
-public class Output
+public class StartUpMenu
 {
     public static void StartUpMessage()
     {
-        Console.WriteLine("Welcome to out Sort Manager");
+        Console.WriteLine("Welcome to our Sort Manager");
 
         Console.WriteLine("Please choose a length of your array: ");
         int lengthInput = Int32.Parse(Console.ReadLine());

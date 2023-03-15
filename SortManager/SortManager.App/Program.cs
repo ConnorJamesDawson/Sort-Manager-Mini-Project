@@ -8,6 +8,6 @@ public class Program
 {
     public static void Main()
     {
-        Output.StartUpMessage();
+        StartUpMenu.StartUpMessage();
     }
 }

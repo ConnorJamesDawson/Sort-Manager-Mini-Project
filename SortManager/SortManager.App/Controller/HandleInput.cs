@@ -34,7 +34,7 @@ public class HandleInput
         if (isUserExiting == "y")
         {
             Console.Clear();
-            Output.StartUpMessage();
+            StartUpMenu.StartUpMessage();
         }
         else Environment.Exit(0);
     }
