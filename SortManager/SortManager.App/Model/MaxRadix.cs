@@ -24,31 +24,48 @@ namespace SortManager.App.Model
             {
                 if (tens)
                 {
-                    temp[countarray[list[i] / 10]] = list[i];
-                    countarray[list[i] / 10]--;
+                    if (list[i] >= 0)
+                    {
+                        temp[countarray[(list[i] / 10) + 9]] = list[i];
+                        countarray[(list[i] / 10) + 9]--;
+                    }
+                    else
+                    {
+                        temp[countarray[9 + (list[i] / 10)]] = list[i];
+                        countarray[9 + (list[i] / 10)]--;
+                    }
                 }
                 if (!tens)
                 {
-                    temp[countarray[list[i] % 10]] = list[i];
-                    countarray[list[i] % 10]--;
+                    if (list[i] >= 0)
+                    {
+                        temp[countarray[(list[i] % 10) + 9]] = list[i];
+                        countarray[list[i] % 10 + 9]--;
+                    }
+                    else
+                    {
+                        temp[countarray[9 + (list[i] % 10)]] = list[i];
+                        countarray[9 + (list[i] % 10)]--;
+                    }
                 }
             }
             return temp;
         }
-
         public override int[] SortArray(int[] list)
         {
             Stopwatch timer = TimerClass.StartTimer();
-            int[] countarray = new int[10];
+            int[] countarray = new int[19];
             for (int i = 0; i < list.Length; i++)
             {
-                countarray[list[i] % 10]++;
+                if (list[i] >= 0) countarray[(list[i] % 10) + 9]++;
+                else countarray[9 + (list[i] % 10)]++;
             }
             list = Radixing(countarray, list, false);
-            countarray = new int[10];
+            countarray = new int[19];
             for (int i = 0; i < list.Length; i++)
             {
-                countarray[list[i] / 10]++;
+                if (list[i] >= 0) countarray[(list[i] / 10) + 9]++;
+                else countarray[9 + (list[i] / 10)]++;
             }
             list = Radixing(countarray, list, true);
             TimerClass.StopTimerAndReturnTime(timer);

@@ -15,7 +15,9 @@ public class HandleInput
         for (int i = 0; i < lengthArray; i++)
         {
             unsorted.Add(random.Next(-99, 99));
-            //Console.Write(unsorted[i] + " ");
+            
+            Console.Write(unsorted[i] + " ");
+
         }
         int[] unsortedArray = unsorted.ToArray();
         Console.WriteLine();
