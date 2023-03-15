@@ -4,6 +4,7 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortManager.App", "SortManager.App\SortManager.App.csproj", "{3C73BA2A-6936-492A-8AAE-CD3D190F9EF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxRadix", "MaxRadix\MaxRadix.csproj", "{BEB93FBA-8235-402A-872F-0F9D0FBE76C8}"
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerClassTest", "Timer.Test\TimerClassTest.csproj", "{74772D95-FB8B-41D8-90B9-621A25CDFA9E}"
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeapSorts.Tests", "HeapSort.Tests\HeapSorts.Tests.csproj", "{640F598D-D856-4D78-B615-C4E709067B5E}"
 EndProject
@@ -17,6 +18,10 @@ Global
 		{3C73BA2A-6936-492A-8AAE-CD3D190F9EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C73BA2A-6936-492A-8AAE-CD3D190F9EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C73BA2A-6936-492A-8AAE-CD3D190F9EF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEB93FBA-8235-402A-872F-0F9D0FBE76C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB93FBA-8235-402A-872F-0F9D0FBE76C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB93FBA-8235-402A-872F-0F9D0FBE76C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB93FBA-8235-402A-872F-0F9D0FBE76C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{74772D95-FB8B-41D8-90B9-621A25CDFA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{74772D95-FB8B-41D8-90B9-621A25CDFA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74772D95-FB8B-41D8-90B9-621A25CDFA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
