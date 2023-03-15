@@ -12,7 +12,7 @@ namespace BubbleSortTest
         }
 
         [Test]
-        public void WhenRandomAray_BuubleSort_ReturnsSortedArray()
+        public void WhenRandomArray_BubbleSort_ReturnsSortedArray()
         {
             int[] array = new int[] { 64, 34, 25, 12, 22, 11, 90 };
             int[] expected = new int[] { 11, 12, 22, 25, 34, 64, 90 };
