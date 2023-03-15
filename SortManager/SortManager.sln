@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortManager.App", "SortManager.App\SortManager.App.csproj", "{3C73BA2A-6936-492A-8AAE-CD3D190F9EF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeapSorts.Tests", "HeapSort.Tests\HeapSorts.Tests.csproj", "{640F598D-D856-4D78-B615-C4E709067B5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeapSorts.Tests", "HeapSort.Tests\HeapSorts.Tests.csproj", "{640F598D-D856-4D78-B615-C4E709067B5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
