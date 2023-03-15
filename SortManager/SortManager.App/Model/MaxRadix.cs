@@ -29,7 +29,6 @@ namespace SortManager.App.Model
                 temp[countarray[list[i]]] = list[i];
                 countarray[list[i]]--;
             }
-
             string result = "";
             foreach (int i in list) result += i.ToString() + ",";
             return result;
