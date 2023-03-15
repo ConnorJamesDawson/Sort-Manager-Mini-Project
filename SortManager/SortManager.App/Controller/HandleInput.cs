@@ -5,29 +5,29 @@ namespace SortManager.App.Controller;
 public class HandleInput
 {
     AbstractSort sortingChosen;
-    public void StartUpArrayMessage()
+    public static int[] GetRandomArray(int lengthArray)
     {
         List<int> unsorted = new List<int>();
-        List<int> sorted;
-
         Random random = new Random();
 
         Console.WriteLine("Original array elements:");
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < lengthArray; i++)
         {
             unsorted.Add(random.Next(0, 100));
             Console.Write(unsorted[i] + " ");
         }
+        int[] unsortedArray = unsorted.ToArray();
         Console.WriteLine();
+        return unsortedArray;
+        
+    }
 
-        // TO DO - implement sorting chosen
-
+    public static int[] GetSortedArray(int[] array)
+    {
         Console.WriteLine("Sorted array elements: ");
-/*        foreach (int x in sorted)
-        {
-            Console.Write(x + " ");
-        }*/
+        
         Console.Write("\n");
+        return array;
     }
 
 }
