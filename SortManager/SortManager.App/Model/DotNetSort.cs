@@ -1,4 +1,9 @@
 ﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SortManager.App.Model;
 
@@ -11,6 +16,7 @@ public class DotNetSort : AbstractSort
         Array.Sort(array);
 
         TimerClass.StopTimerAndReturnTime(timer);
+
         return array;
     }
 }
