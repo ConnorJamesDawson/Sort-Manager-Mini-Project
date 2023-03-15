@@ -15,14 +15,15 @@ namespace SortManager.App.Factory
 
             switch(algorithmType) 
             {
-                case "bubblesort":
-                    // return new BubbleSort();
-                case "heapsort":
+                case "1":
+                    return new BubbleSort();
+                case "2":
                     return new HeapSort();
-                case "mergesort":
-                    // return new MergeSort();
-                case "radixsort":
-                    // return new RadixSort();
+                case "3":
+                     return new MergeSort();
+                case "4":
+                    //return new RadixSort();
+                    return null;
                 default:
                     throw new ArgumentException("Could not instantiate that type of sorting algorithm");
             }
