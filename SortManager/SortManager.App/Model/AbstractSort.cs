@@ -8,20 +8,8 @@ namespace SortManager.App.Model;
 
 public abstract class AbstractSort
 {
-
     public int[] GetUnsortedArray {get; set;}
     public int[] GetArray {get; set;}
-    public string GetTime {get; set;}
 
     public abstract int[] SortArray(int[] array);
-
-    public DateTime StartTimer()
-    {
-        return DateTime.Now;
-    }
-
-    public DateTime StopTimer()
-    {
-        return DateTime.Now;
-    }
 }

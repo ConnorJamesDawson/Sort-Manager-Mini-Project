@@ -1,11 +1,13 @@
 ﻿
-namespace SortManager.App
+using SortManager.App.View;
+using SortManager.App.Model;
+
+namespace SortManager.App;
+
+public class Program
 {
-    internal class Program
+    public static void Main()
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        Output.StartUpMessage();
     }
 }

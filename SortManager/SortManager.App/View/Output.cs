@@ -2,44 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
+using SortManager.App.Controller;
+using SortManager.App.Model;
 
-namespace SortManager.App.View
+namespace SortManager.App.View;
+
+public class Output
 {
-    internal class Output
+    public static void StartUpMessage()
     {
-        public void StartUpMessage()
-        {
-            Console.WriteLine("Welcome to out Sort Manager");
-            Console.WriteLine("Please Choose from the following sort Methods to sort an unsorted array: \n1: BubbleSort, \n2: HeapSort, \n3: MergeSort \n4: .NET LibrarySort");
+        Console.WriteLine("Welcome to out Sort Manager");
 
-            string input = Console.ReadLine().ToLower();
+        Console.WriteLine("Please choose a length of your array: ");
+        int lengthInput = Int32.Parse(Console.ReadLine());
+        int[] unsortedArray = HandleInput.GetRandomArray(lengthInput);
 
-            HandleUserInput(input);
-        }
+        Console.WriteLine("Please choose from the following sort Methods to sort an unsorted array: \n1: BubbleSort, \n2: HeapSort, \n3: MergeSort \n4: .NET LibrarySort");
+        string input = Console.ReadLine().ToLower();
 
-        public void HandleUserInput(string userInput)
-        {
-            switch(userInput)
-            {
-                case "1":
-                    //Do BubbleSort
-                    break;
-                case "2":
-                    //Do HeapSort
-                    break;
-                case "3":
-                    //Do MergeSort
-                    break;
-                case "4":
-                    //Do .NET LibrarySort
-                    break;
-                default:
-                    Console.WriteLine($"Incorrect value given: {userInput}");
-                    break;
-            }
-        }
-
-
+        if (input == "quit") Environment.Exit(0);
+        HandleInput.HandleUserInput(input, unsortedArray);
     }
 }

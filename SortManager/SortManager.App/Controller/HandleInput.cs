@@ -1,32 +1,50 @@
 ﻿using SortManager.App.Model;
+using SortManager.App.View;
 
 namespace SortManager.App.Controller;
 
 public class HandleInput
 {
     AbstractSort sortingChosen;
-    public void StartUpArrayMessage()
+    public static int[] GetRandomArray(int lengthArray)
     {
         List<int> unsorted = new List<int>();
-        List<int> sorted;
-
         Random random = new Random();
 
         Console.WriteLine("Original array elements:");
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < lengthArray; i++)
         {
             unsorted.Add(random.Next(0, 100));
             Console.Write(unsorted[i] + " ");
         }
+        int[] unsortedArray = unsorted.ToArray();
         Console.WriteLine();
+        return unsortedArray;
+        
+    }
 
-        // TO DO - implement sorting chosen
+    public static void HandleUserInput(string userInput, int[] unsortedArray)
+    {
+        var sortAlgorithm = Factory.Factory.CreateSortAlgorithm(userInput);
+        GetSortedArray(sortAlgorithm.SortArray(unsortedArray));
 
-        Console.WriteLine("Sorted array elements: ");
-/*        foreach (int x in sorted)
+        Console.WriteLine("Do you want to continue? y/n?");
+        string isUserExiting = Console.ReadLine().ToLower();
+        if (isUserExiting == "y")
         {
-            Console.Write(x + " ");
-        }*/
+            Console.Clear();
+            Output.StartUpMessage();
+        }
+        else Environment.Exit(0);
+    }
+
+    public static void GetSortedArray(int[] array)
+    {
+        Console.WriteLine("Sorted array elements: ");
+        foreach(var entry in array)
+        {
+            Console.Write(entry + " ");
+        }
         Console.Write("\n");
     }
 
