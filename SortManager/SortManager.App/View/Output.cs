@@ -17,35 +17,27 @@ public class Output
 
         Console.WriteLine("Please choose a length of your array: ");
         int lengthInput = Int32.Parse(Console.ReadLine());
-        HandleInput.GetRandomArray(lengthInput);
+        int[] unsortedArray = HandleInput.GetRandomArray(lengthInput);
 
         Console.WriteLine("Please choose from the following sort Methods to sort an unsorted array: \n1: BubbleSort, \n2: HeapSort, \n3: MergeSort \n4: .NET LibrarySort");
         string input = Console.ReadLine().ToLower();
 
-        HandleUserInput(input);
+        if (input == "quit") Environment.Exit(0);
+        HandleUserInput(input, unsortedArray);
     }
 
-    public static void HandleUserInput(string userInput)
+
+    public static void HandleUserInput(string userInput, int[] unsortedArray)
     {
-        switch(userInput)
+            var sortAlgorithm = Factory.Factory.CreateSortAlgorithm(userInput);
+            sortAlgorithm.SortArray(unsortedArray);
+            Console.WriteLine("Do you want to continue? y/n?");
+            string isUserExiting = Console.ReadLine().ToLower();
+        if (isUserExiting == "y")
         {
-            case "1":
-                //new BubbleSort();
-                break;
-            case "2":
-                //Do HeapSort
-                break;
-            case "3":
-                //Do MergeSort
-                break;
-            case "4":
-                //Do .NET LibrarySort
-                break;
-            default:
-                Console.WriteLine($"Incorrect value given: {userInput}");
-                break;
+            Console.Clear();
+            StartUpMessage();
         }
+        else Environment.Exit(0);
     }
-
-
 }

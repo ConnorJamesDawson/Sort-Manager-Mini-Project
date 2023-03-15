@@ -5,6 +5,7 @@ public class BubbleSort : AbstractSort
 {
     public override int[] SortArray(int[] array)
     {
+        Console.WriteLine("Bubble");
         GetUnsortedArray = array;
         int n = array.Length;
 
