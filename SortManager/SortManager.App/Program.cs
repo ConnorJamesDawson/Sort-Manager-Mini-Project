@@ -1,4 +1,5 @@
-﻿namespace SortManager.App
+﻿
+namespace SortManager.App
 {
     internal class Program
     {
