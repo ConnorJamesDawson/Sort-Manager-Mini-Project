@@ -8,6 +8,7 @@ public class HandleInput
     AbstractSort sortingChosen;
     public static int[] GetRandomArray(int lengthArray)
     {
+        if (lengthArray <= 0) { throw new ArgumentOutOfRangeException("lengthArray must be greater than 0"); }
         List<int> unsorted = new List<int>();
         Random random = new Random();
 

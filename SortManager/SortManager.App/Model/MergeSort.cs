@@ -1,9 +1,12 @@
-﻿namespace SortManager.App.Model;
+﻿using System.Diagnostics;
+
+namespace SortManager.App.Model;
 
 public class MergeSort: AbstractSort
 {
     public override int[] SortArray(int[] array)
     {
+        Stopwatch timer = TimerClass.StartTimer();
         GetUnsortedArray = array;
         if (array == null || array.Length <= 1)
         {
@@ -12,6 +15,7 @@ public class MergeSort: AbstractSort
 
         MergeSortAlgorithm(array, 0, array.Length - 1);
         GetArray = array;
+        TimerClass.StopTimerAndReturnTime(timer);
         return array;
     }
 

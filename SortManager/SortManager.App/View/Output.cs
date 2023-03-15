@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-using SortManager.App.Controller;
-using SortManager.App.Model;
+﻿using SortManager.App.Controller;
 
 namespace SortManager.App.View;
 
@@ -19,7 +12,7 @@ public class Output
         int lengthInput = Int32.Parse(Console.ReadLine());
         int[] unsortedArray = HandleInput.GetRandomArray(lengthInput);
 
-        Console.WriteLine("Please choose from the following sort Methods to sort an unsorted array: \n1: BubbleSort, \n2: HeapSort, \n3: MergeSort \n4: .NET LibrarySort");
+        Console.WriteLine("Please choose from the following sort Methods to sort an unsorted array: \n1: BubbleSort, \n2: HeapSort, \n3: MergeSort \n4: .NET LibrarySort, \n5: RadixSort, \n6: ShellSort");
         string input = Console.ReadLine().ToLower();
 
         if (input == "quit") Environment.Exit(0);

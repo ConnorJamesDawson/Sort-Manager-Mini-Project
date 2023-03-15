@@ -1,4 +1,6 @@
 ﻿
+using System.Diagnostics;
+
 namespace SortManager.App.Model;
 
 public class BubbleSort : AbstractSort
@@ -6,6 +8,7 @@ public class BubbleSort : AbstractSort
     public override int[] SortArray(int[] array)
     {
         Console.WriteLine("Bubble");
+        Stopwatch timer  = TimerClass.StartTimer();
         GetUnsortedArray = array;
         int n = array.Length;
 
@@ -22,6 +25,7 @@ public class BubbleSort : AbstractSort
             }
         }
         GetArray= array;
+        TimerClass.StopTimerAndReturnTime(timer);
         return array;
     }
 }

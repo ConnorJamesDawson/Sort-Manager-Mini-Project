@@ -1,3 +1,4 @@
+﻿using System.Diagnostics;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,11 @@ public class DotNetSort : AbstractSort
 {
     public override int[] SortArray(int[] array)
     {
+        Stopwatch timer = TimerClass.StartTimer();
+
         Array.Sort(array);
+
+        TimerClass.StopTimerAndReturnTime(timer);
 
         return array;
     }

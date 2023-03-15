@@ -1,23 +1,20 @@
-﻿namespace SortManager.App.Model;
+﻿using System.Diagnostics;
+
+namespace SortManager.App.Model;
 
 public class TimerClass
 {
-    public static int GetTime(int time) => time;
-    public static decimal StartTimer(decimal startTime)
+    public static decimal GetTime(decimal time) => time;
+    public static Stopwatch StartTimer()
     {
-        startTime = DateTime.Now.Millisecond;
-        return startTime;
+        Stopwatch timer = Stopwatch.StartNew();
+        return timer;
     }
 
-    public static decimal StopTimerAndCalculateTime(decimal startTime)
+    public static void StopTimerAndReturnTime(Stopwatch timer)
     {
-        decimal timePassed = DateTime.Now.Millisecond - startTime;
-        return timePassed;
-    }
-
-    public override string ToString()
-    {
-        return $"Time taken: {GetTime} seconds";
+        timer.Stop();
+        Console.WriteLine($"Time taken: {timer.Elapsed.TotalMilliseconds} milliseconds");
     }
 
 }
