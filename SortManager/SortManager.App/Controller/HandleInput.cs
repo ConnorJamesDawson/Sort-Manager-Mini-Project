@@ -17,7 +17,6 @@ public class HandleInput
             unsorted.Add(random.Next(-99, 99));
             
             Console.Write(unsorted[i] + " ");
-
         }
         int[] unsortedArray = unsorted.ToArray();
         Console.WriteLine();
@@ -28,9 +27,11 @@ public class HandleInput
     public static void HandleUserInput(string userInput, int[] unsortedArray)
     {
         var sortAlgorithm = Factory.Factory.CreateSortAlgorithm(userInput);
-        //GetSortedArray(sortAlgorithm.SortArray(unsortedArray));
-        sortAlgorithm.SortArray(unsortedArray);
+
+        GetSortedArray(sortAlgorithm.SortArray(unsortedArray));
+
         Console.WriteLine("Do you want to continue? y/n?");
+
         string isUserExiting = Console.ReadLine().ToLower();
         if (isUserExiting == "y")
         {
