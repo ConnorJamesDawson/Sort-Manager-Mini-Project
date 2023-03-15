@@ -1,9 +1,12 @@
-﻿namespace SortManager.App.Model;
+﻿using System.Diagnostics;
+
+namespace SortManager.App.Model;
 
 public class ShellSort : AbstractSort
 {
     public override int[] SortArray(int[] array)
     {
+        Stopwatch timer = TimerClass.StartTimer();
         int n = array.Length;
 
         // Start with a big gap, 
@@ -32,6 +35,7 @@ public class ShellSort : AbstractSort
                 array[j] = temp;
             }
         }
+        TimerClass.StopTimerAndReturnTime(timer);
         return array;
     }
 }

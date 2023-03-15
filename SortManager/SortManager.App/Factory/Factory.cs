@@ -22,8 +22,11 @@ namespace SortManager.App.Factory
                 case "3":
                      return new MergeSort();
                 case "4":
-                    //return new RadixSort();
-                    return null;
+                    return new DotNetSort();
+                case "5":
+                    return new MaxRadix();
+                case "6":
+                    return new ShellSort();
                 default:
                     throw new ArgumentException("Could not instantiate that type of sorting algorithm");
             }

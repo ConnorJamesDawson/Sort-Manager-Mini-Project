@@ -1,10 +1,13 @@
-﻿namespace SortManager.App.Model;
+﻿using System.Diagnostics;
+
+namespace SortManager.App.Model;
 
 public class HeapSort : AbstractSort
 {
-    private bool _debug = true;
+    private bool _debug = false;
     public override int[] SortArray(int[] array)
     {
+        Stopwatch timer = TimerClass.StartTimer();
         int N = array.Length;
 
         // Build heap (rearrange array)
@@ -26,6 +29,7 @@ public class HeapSort : AbstractSort
             // call max heapify on the reduced heap as i--
             heapify(array, i, 0);
         }
+        TimerClass.StopTimerAndReturnTime(timer);
         return array;
     }
 

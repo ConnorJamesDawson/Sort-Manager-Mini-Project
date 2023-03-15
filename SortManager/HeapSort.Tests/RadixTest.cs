@@ -1,19 +1,14 @@
-using SortManager.App;
-namespace MaxRadix
-{
-    public class Tests
-    {
-        [SetUp]
-        public void Setup()
-        {
-        }
+using SortManager.App.Model;
+namespace MaxRadixTests;
 
-        [Test]
-        public void Test1()
-        {
-            int[] pass = new int[] { 0, 1, 1, 2, 2, 3, 3, 6, 9, 2, 4, 5, 6, 8, 5, 5, 7};
-            var test = SortManager.App.Model.MaxRadix.Radix(pass);
-            Assert.That(test, Is.EqualTo("0,1,1,2,2,2,3,3,4,5,5,5,6,6,7,8,9,"));
-        }
+public class Tests
+{
+
+    [TestCase(new int[] { 99, 88, 3, 34, 65, 53 }, new int[] { 3, 34, 53, 65, 88, 99 })]
+    [TestCase(new int[] { 32, 99, 88, 3, 34, 65, 53 }, new int[] { 3, 32, 34, 53, 65, 88, 99 })]
+    public void GivenUnsortedArray_SortArray_ReturnSortedArray(int[] unsortedArray, int[] expectedArray)
+    {
+        MaxRadix mr = new MaxRadix();
+        Assert.That(mr.SortArray(unsortedArray), Is.EqualTo(expectedArray));
     }
 }

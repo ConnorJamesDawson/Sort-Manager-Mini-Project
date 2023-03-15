@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SortManager.App.Model
 {
-    public class MaxRadix
+    public class MaxRadix : AbstractSort
     {
         static public int[] Radixing(int[] countarray, int[] list, bool tens)
         {
@@ -19,7 +20,7 @@ namespace SortManager.App.Model
                     countarray[i] = countarray[i - 1] + countarray[i];
                 }
             }
-            for (int i = temp.Length - 1; i > 0; i--)
+            for (int i = temp.Length - 1; i >= 0; i--)
             {
                 if (tens)
                 {
@@ -34,8 +35,10 @@ namespace SortManager.App.Model
             }
             return temp;
         }
-        static public string Radix(int[] list)
+
+        public override int[] SortArray(int[] list)
         {
+            Stopwatch timer = TimerClass.StartTimer();
             int[] countarray = new int[10];
             for (int i = 0; i < list.Length; i++)
             {
@@ -48,9 +51,8 @@ namespace SortManager.App.Model
                 countarray[list[i] / 10]++;
             }
             list = Radixing(countarray, list, true);
-            string result = "";
-            foreach (int i in list) result += i.ToString() + ",";
-            return result;
+            TimerClass.StopTimerAndReturnTime(timer);
+            return list;
         }
     }
 }

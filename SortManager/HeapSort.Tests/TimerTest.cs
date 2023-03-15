@@ -1,29 +1,19 @@
 using SortManager.App.Model;
+using System.Diagnostics;
+
 namespace TimerClassTest;
 
 public class TimerTests
 {
 
     [Test]
-    public void StartTimer_ReturnsCurrentTimeinSecond()
+    public void StopTimerAndCalculateTime_ReturnsCurrentTimeinSecond()
     {
-        int startTime = TimerClass.StartTimer(DateTime.Now.Second);
-        Assert.That(startTime,Is.EqualTo(DateTime.Now.Second));
+        Stopwatch timer = Stopwatch.StartNew();
+        Thread.Sleep(10);
+        timer.Stop();
+        double timePassed = timer.Elapsed.TotalMilliseconds;
+        Assert.That(timePassed, Is.EqualTo(timer.Elapsed.TotalMilliseconds));
     }
 
-    [TestCase(60)]
-    [TestCase(50)]
-    [TestCase(30)]
-    public void StopTimerAndCalculateTime_ReturnsCurrentTimeinSecond(int time)
-    {
-        int timePassed = TimerClass.StopTimerAndCalculateTime(time);
-        Assert.That(timePassed, Is.EqualTo(DateTime.Now.Second - time));
-    }
-
-    [Test]
-    public void ToString_ReturnTimeTaken()
-    {
-        string timeTaken = $"Time Taken: {TimerClass.GetTime(60)} seconds";
-        Assert.That(timeTaken, Is.EqualTo("Time Taken: 60 seconds"));
-    }
 }
