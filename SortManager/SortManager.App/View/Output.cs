@@ -23,21 +23,6 @@ public class Output
         string input = Console.ReadLine().ToLower();
 
         if (input == "quit") Environment.Exit(0);
-        HandleUserInput(input, unsortedArray);
-    }
-
-
-    public static void HandleUserInput(string userInput, int[] unsortedArray)
-    {
-            var sortAlgorithm = Factory.Factory.CreateSortAlgorithm(userInput);
-            sortAlgorithm.SortArray(unsortedArray);
-            Console.WriteLine("Do you want to continue? y/n?");
-            string isUserExiting = Console.ReadLine().ToLower();
-        if (isUserExiting == "y")
-        {
-            Console.Clear();
-            StartUpMessage();
-        }
-        else Environment.Exit(0);
+        HandleInput.HandleUserInput(input, unsortedArray);
     }
 }
