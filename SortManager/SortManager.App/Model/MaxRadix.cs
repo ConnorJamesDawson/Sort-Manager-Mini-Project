@@ -48,6 +48,7 @@ namespace SortManager.App.Model
                 countarray[list[i] / 10]++;
             }
             list = Radixing(countarray, list, true);
+            
             string result = "";
             foreach (int i in list) result += i.ToString() + ",";
             return result;
