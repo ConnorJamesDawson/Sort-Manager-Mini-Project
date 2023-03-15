@@ -8,14 +8,9 @@ namespace SortManager.App.Model
 {
     public class MaxRadix
     {
-        static public string Radix(int[] list)
+        static public int[] Radixing(int[] countarray, int[] list, bool tens)
         {
-            int[] countarray = new int[10];
             int[] temp = new int[list.Length];
-            for (int i = 0; i < list.Length; i++)
-            {
-                countarray[list[i]]++;
-            }
             for (int i = 0; i < countarray.Length; i++)
             {
                 if (i == 0) countarray[i] -= 1;
@@ -26,9 +21,33 @@ namespace SortManager.App.Model
             }
             for (int i = temp.Length - 1; i > 0; i--)
             {
-                temp[countarray[list[i]]] = list[i];
-                countarray[list[i]]--;
+                if (tens)
+                {
+                    temp[countarray[list[i] / 10]] = list[i];
+                    countarray[list[i] / 10]--;
+                }
+                if (!tens)
+                {
+                    temp[countarray[list[i] % 10]] = list[i];
+                    countarray[list[i] % 10]--;
+                }
             }
+            return temp;
+        }
+        static public string Radix(int[] list)
+        {
+            int[] countarray = new int[10];
+            for (int i = 0; i < list.Length; i++)
+            {
+                countarray[list[i] % 10]++;
+            }
+            list = Radixing(countarray, list, false);
+            countarray = new int[10];
+            for (int i = 0; i < list.Length; i++)
+            {
+                countarray[list[i] / 10]++;
+            }
+            list = Radixing(countarray, list, true);
             string result = "";
             foreach (int i in list) result += i.ToString() + ",";
             return result;
