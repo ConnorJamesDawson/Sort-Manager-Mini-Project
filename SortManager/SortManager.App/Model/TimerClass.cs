@@ -3,15 +3,15 @@
 public class TimerClass
 {
     public static int GetTime(int time) => time;
-    public static int StartTimer(int startTime)
+    public static decimal StartTimer(decimal startTime)
     {
-        startTime = DateTime.Now.Second;
+        startTime = DateTime.Now.Millisecond;
         return startTime;
     }
 
-    public static int StopTimerAndCalculateTime(int startTime)
+    public static decimal StopTimerAndCalculateTime(decimal startTime)
     {
-        int timePassed = DateTime.Now.Second - startTime;
+        decimal timePassed = DateTime.Now.Millisecond - startTime;
         return timePassed;
     }
 
