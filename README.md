@@ -1,11 +1,16 @@
 # Sort-Manager-Mini-Project
+This is a Sort Algortihm program that given a length of an array, an unsorted randomly generated array is created and the user can choose which sort algorithm they would like to use to sort the unsorted array, of their chosen length
 
 ## How to use
 
-## Sorting Methods
+Console Output first requires a length for the array to be, this must be inputted by the user:
+- This inputted number must be more than 0, and less than the max value of Int32 which is 2,147,483,647
 
-### HeapSort Method
+Then the user must choose which sort algorithm they would like to use for their unsorted array, the numbers below assort to what number should be pressed on the keyboard:
+1. Bubble Sort
+2. Heap Sort
+3. Merge Sort
+4. .Net Libaray Sort
+5. Radix Sort
+6. Shell Sort
 
-The Heap Sorting method works by arranging an array into a binary tree, with the largest value at the root of the tree. 
-
-Then a Loop is made counting backwards from the Length of the array, assigning the root number (the largest) to the last value of the array and then making the rest of the array into another heap recursively until the array is sorted.
